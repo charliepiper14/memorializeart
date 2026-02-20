@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memorialize Art | Google Ads Audit Q4 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #0f0f1a;
+  --bg-secondary: #1a1a2e;
+  --bg-card: #16162a;
+  --bg-card-hover: #1e1e3a;
+  --border: rgba(255,255,255,0.06);
+  --accent-green: #00d9a5;
+  --accent-purple: #8b5cf6;
+  --accent-red: #ef4444;
+  --accent-amber: #f59e0b;
+  --accent-blue: #3b82f6;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0b8;
+  --text-muted: #6b6b80;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg-primary);color:var(--text-primary);
+  line-height:1.6;font-size:15px;
+}
+.slide{
+  min-height:100vh;padding:48px 64px;position:relative;
+  display:flex;flex-direction:column;border-bottom:1px solid var(--border);
+}
+.slide-number{position:absolute;top:24px;right:32px;font-size:13px;color:var(--text-muted);font-weight:600;letter-spacing:1px;}
+.slide-tag{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--accent-green);margin-bottom:8px;font-weight:600;}
+.slide-tag.red{color:var(--accent-red);}
+.slide-tag.amber{color:var(--accent-amber);}
+.slide-tag.purple{color:var(--accent-purple);}
+.slide-tag.blue{color:var(--accent-blue);}
+h1{font-family:'DM Sans',sans-serif;font-size:52px;font-weight:700;line-height:1.15;margin-bottom:16px;}
+.slide-title{font-family:'DM Sans',sans-serif;font-size:36px;font-weight:700;margin-bottom:28px;line-height:1.2;}
+h2{font-family:'DM Sans',sans-serif;font-size:22px;font-weight:600;margin-bottom:16px;}
+h3{font-size:18px;font-weight:600;margin-bottom:16px;}
+h4{font-size:14px;font-weight:600;margin-bottom:8px;}
+p{font-size:15px;color:var(--text-secondary);margin-bottom:16px;line-height:1.7;}
+.subtitle{font-size:18px;color:var(--text-secondary);max-width:600px;margin-bottom:32px;font-weight:400;}
+.cover{
+  justify-content:center;align-items:center;text-align:center;
+  background:radial-gradient(ellipse at 50% 30%,rgba(139,92,246,0.08) 0%,transparent 50%),
+             radial-gradient(ellipse at 80% 80%,rgba(0,217,165,0.05) 0%,transparent 40%);
+}
+.cover h1{font-size:56px;}
+.cover .meta{margin-top:48px;display:flex;gap:16px;font-size:13px;color:var(--text-secondary);flex-wrap:wrap;justify-content:center;}
+.cover .meta span{display:flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border-radius:8px;border:1px solid var(--border);}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0 32px;}
+.metrics-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0 32px;}
+.metric-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;}
+.metric-card.green{border-top:3px solid var(--accent-green);}
+.metric-card.red{border-top:3px solid var(--accent-red);}
+.metric-card.amber{border-top:3px solid var(--accent-amber);}
+.metric-card.purple{border-top:3px solid var(--accent-purple);}
+.metric-card.blue{border-top:3px solid var(--accent-blue);}
+.metric-card.neutral{border-top:3px solid var(--text-muted);}
+.metric-label{font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:8px;font-weight:500;}
+.metric-value{font-family:'DM Sans',sans-serif;font-size:32px;font-weight:700;line-height:1.1;}
+.metric-sub{font-size:12px;margin-top:8px;color:var(--text-muted);}
+.data-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;}
+.data-table th{text-align:left;padding:12px 16px;background:var(--bg-card);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);border-bottom:1px solid var(--border);}
+.data-table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--text-secondary);}
+.data-table tr:hover td{background:var(--bg-card-hover);}
+.good{color:var(--accent-green);font-weight:600;}
+.bad{color:var(--accent-red);font-weight:600;}
+.warn{color:var(--accent-amber);font-weight:600;}
+.neutral-t{color:var(--text-secondary);}
+.insight-box{background:var(--bg-card);border-left:3px solid var(--accent-green);padding:20px 24px;margin:20px 0;border-radius:0 12px 12px 0;}
+.insight-box.red{border-left-color:var(--accent-red);}
+.insight-box.amber{border-left-color:var(--accent-amber);}
+.insight-box.purple{border-left-color:var(--accent-purple);}
+.insight-box p{margin-bottom:0;}
+.insight-box strong{color:var(--text-primary);}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;}
+.timeline{position:relative;padding-left:32px;margin:24px 0;}
+.timeline::before{content:'';position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:linear-gradient(to bottom,var(--accent-purple),var(--accent-green));border-radius:1px;}
+.timeline-item{position:relative;margin-bottom:28px;padding-left:16px;}
+.timeline-item::before{content:'';position:absolute;left:-28px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--accent-green);border:2px solid var(--bg-primary);}
+.timeline-item.purple::before{background:var(--accent-purple);}
+.timeline-item.amber::before{background:var(--accent-amber);}
+.timeline-item.red::before{background:var(--accent-red);}
+.timeline-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent-green);margin-bottom:6px;font-weight:600;}
+.timeline-item.purple .timeline-label{color:var(--accent-purple);}
+.timeline-item.amber .timeline-label{color:var(--accent-amber);}
+.timeline-item.red .timeline-label{color:var(--accent-red);}
+.funnel-step{display:flex;align-items:center;gap:16px;margin-bottom:10px;padding:12px 16px;background:var(--bg-card);border-radius:8px;border:1px solid var(--border);}
+.funnel-step .step-name{font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;width:200px;flex-shrink:0;}
+.funnel-step .step-value{font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;width:100px;text-align:right;flex-shrink:0;}
+.funnel-step .step-rate{font-size:13px;font-weight:600;width:130px;text-align:right;flex-shrink:0;}
+.funnel-step .step-bar{flex:1;height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;}
+.funnel-step .step-bar-fill{height:100%;border-radius:4px;}
+.progress-row{margin-bottom:12px;}
+.progress-label{display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px;color:var(--text-secondary);}
+.progress-bar{height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:4px;}
+.big-callout{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;}
+.big-callout .number{font-family:'DM Sans',sans-serif;font-size:52px;font-weight:700;letter-spacing:-1px;line-height:1;}
+.big-callout .label{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--text-muted);margin-top:8px;}
+@media(max-width:900px){
+  .slide{padding:40px 24px;}
+  h1{font-size:36px;}
+  .two-col,.three-col,.metrics-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: COVER -->
+<section class="slide cover">
+  <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heath Media" style="width:180px;margin-bottom:48px;opacity:0.9;">
+  <div class="slide-tag">Prepared For</div>
+  <h1>Memorialize Art</h1>
+  <p class="subtitle" style="max-width:640px;margin:0 auto 32px;">Q4 2025 Performance Audit &nbsp;|&nbsp; Conversion Tracking Analysis &nbsp;|&nbsp; CRO Review &nbsp;|&nbsp; Growth Roadmap</p>
+  <div class="meta">
+    <span>Audit Period: Oct 1 to Dec 31 2025</span>
+    <span>Q4 Spend: $137,579</span>
+    <span>Blended ROAS: 2.96x</span>
+    <span>Market: United States</span>
+    <span>Status: Campaigns Paused</span>
+  </div>
+</section>
+
+<!-- SLIDE 2: EXECUTIVE SUMMARY -->
+<section class="slide">
+  <span class="slide-number">02 / 17</span>
+  <div class="slide-tag">Executive Summary</div>
+  <h1 class="slide-title">Q4 2025 at a Glance</h1>
+
+  <div class="metrics-grid">
+    <div class="metric-card red">
+      <div class="metric-label">Q4 Total Spend</div>
+      <div class="metric-value">$137,579</div>
+      <div class="metric-sub">$1,495 daily average over 92 days</div>
+    </div>
+    <div class="metric-card red">
+      <div class="metric-label">Blended ROAS</div>
+      <div class="metric-value">2.96x</div>
+      <div class="metric-sub">$407,012 total conversion value</div>
+    </div>
+    <div class="metric-card amber">
+      <div class="metric-label">Conversions</div>
+      <div class="metric-value">2,290</div>
+      <div class="metric-sub">$60 avg CPA &nbsp;|&nbsp; $178 avg order value</div>
+    </div>
+    <div class="metric-card amber">
+      <div class="metric-label">Paid CVR (GA4)</div>
+      <div class="metric-value">3.49%</div>
+      <div class="metric-sub">55,246 paid sessions to 1,929 purchases</div>
+    </div>
+  </div>
+
+  <p>Memorialize Art ran Google Ads throughout Q4 2025 and generated $407,012 in conversion value on $137,579 in spend, producing a 2.96x blended ROAS. Given that Q4 encompasses Black Friday, Cyber Monday, and Christmas, the most commercially significant gifting period of the year for a memorial portrait business, this result sits below the performance level that the product and audience opportunity should support.</p>
+
+  <p>The Q4 data points to three compounding structural issues as the primary causes. First, conversion tracking was partially broken throughout the quarter: Add to Cart, Begin Checkout, and Page View events recorded zero results in the Goals summary despite being active, meaning Smart Bidding algorithms operated without mid-funnel signal for the entire period. Second, 100% of the product catalogue in Merchant Center was marked ineligible, restricting Shopping and feed-supplemented PMax campaigns. Third, 19.1% of the PMax budget was allocated to YouTube at 0.63x ROAS while the purchase-intent search channels carried the rest of the load. Each of these is a correctable infrastructure problem, not a market or product issue.</p>
+
+  <h2 style="margin-top:8px;">Campaign Type Breakdown</h2>
+  <table class="data-table">
+    <thead>
+      <tr><th>Type</th><th>Q4 Spend</th><th>% Budget</th><th>Conv. Value</th><th>ROAS</th><th>Conversions</th><th>Avg CPA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Performance Max (5 campaigns)</td><td>$71,876</td><td class="warn">52.2%</td><td>$208,762</td><td class="bad">2.90x</td><td>1,218</td><td>$59</td></tr>
+      <tr><td>Search + DSA (4 campaigns)</td><td>$56,854</td><td class="warn">41.3%</td><td>$172,717</td><td class="warn">3.04x</td><td>975</td><td>$58</td></tr>
+      <tr><td>Standard Shopping (4 campaigns)</td><td>$8,849</td><td>6.4%</td><td>$22,184</td><td class="bad">2.51x</td><td>120</td><td>$74</td></tr>
+      <tr><td>Display</td><td>$8</td><td>&lt;0.1%</td><td>$0</td><td class="bad">0.00x</td><td>0</td><td>n/a</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- SLIDE 3: CONVERSION TRACKING -->
+<section class="slide">
+  <span class="slide-number">03 / 17</span>
+  <div class="slide-tag red">Conversion Tracking</div>
+  <h1 class="slide-title">The Smart Bidding Foundation Was Incomplete</h1>
+
+  <div class="metrics-grid">
+    <div class="metric-card green">
+      <div class="metric-label">Purchase Tracking</div>
+      <div class="metric-value">Working</div>
+      <div class="metric-sub">2,296 purchases | $408K value | Data-Driven</div>
+    </div>
+    <div class="metric-card red">
+      <div class="metric-label">Add to Cart</div>
+      <div class="metric-value">0 Results</div>
+      <div class="metric-sub">Active but recording no data in Goals</div>
+    </div>
+    <div class="metric-card red">
+      <div class="metric-label">Begin Checkout</div>
+      <div class="metric-value">0 Results</div>
+      <div class="metric-sub">Critical mid-funnel signal absent</div>
+    </div>
+    <div class="metric-card red">
+      <div class="metric-label">Page View</div>
+      <div class="metric-value">0 Results</div>
+      <div class="metric-sub">Top-of-funnel signal not recording</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3>Attribution Configuration Issues</h3>
+      <p>The Goals summary shows two parallel purchase tracking systems running simultaneously. The primary "Memorialize Art (web) purchase" event uses Data-Driven Attribution and is recording conversions correctly. A secondary "Google Shopping App Purchase" event on Last Click attribution is also recording purchase conversions and contributing to bidding decisions. Both are set as Account Default Goals.</p>
+      <p>Running two purchase events simultaneously creates double-counting in reporting and sends conflicting attribution signals to Smart Bidding. The algorithm receives two different credit assignments for the same transaction and cannot accurately determine which ad interactions drove which outcomes.</p>
+      <div class="insight-box red">
+        <p><strong>All seven Google Shopping App events are eligible to switch to Data-Driven Attribution, but none have been migrated.</strong> The Switch to DDA notification has been visible in the account throughout Q4. With Last Click and Data-Driven events running in parallel, ROAS measurement is unreliable and the bidding model is receiving inconsistent signals across campaigns.</p>
+      </div>
+    </div>
+    <div>
+      <h3>What This Means for PMax and Smart Bidding</h3>
+      <p>Performance Max, Target ROAS, and Target CPA all rely on micro-conversion signals to understand the shape of the purchase path. Add to Cart identifies high-intent users. Begin Checkout weights those users more heavily for bid adjustment. Without either event, the bidding model treats every click with equal purchase probability regardless of actual user intent signals.</p>
+      <p>The Attribution Overview confirms this directly: 0% of conversion journeys in Q4 showed two or more ad interactions before converting. This is not because customers always converted on the first interaction. It reflects that the tracking infrastructure could not record multi-step paths correctly. Every campaign's Smart Bidding strategy made real-time bid decisions without this data for the entire quarter.</p>
+      <div class="insight-box amber">
+        <p><strong>The practical consequence for ROAS:</strong> without mid-funnel signal, high-intent cart users and one-page bounces were bid on at similar rates. This over-spends on low-intent traffic and under-bids on the users who are closest to purchase. Both directions reduce ROAS, and the effect amplifies as budgets increase, which is consistent with performance patterns seen through November and December.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4: PMAX ARCHITECTURE -->
+<section class="slide">
+  <span class="slide-number">04 / 17</span>
+  <div class="slide-tag red">PMax Architecture</div>
+  <h1 class="slide-title">$13,735 on YouTube at 0.63x ROAS</h1>
+
+  <p>The channel distribution report reveals a significant budget misallocation within the PMax campaigns. Of the $71,876 spent through PMax in Q4, 19.1% was consumed by YouTube, which returned 0.63x ROAS. Display, Discover, and Gmail combined received $83. The account was running five simultaneous PMax campaigns, four of which were rated "Poor" in Ad Strength. Poor asset strength causes Google to favour broad, high-impression-volume surfaces like YouTube rather than high-intent search and Shopping inventory.</p>
+
+  <div class="metrics-grid">
+    <div class="metric-card red">
+      <div class="metric-label">YouTube Spend Q4</div>
+      <div class="metric-value">$13,735</div>
+      <div class="metric-sub">19.1% of total PMax budget</div>
+    </div>
+    <div class="metric-card red">
+      <div class="metric-label">YouTube ROAS</div>
+      <div class="metric-value">0.63x</div>
+      <div class="metric-sub">$8,653 revenue on $13,735 spend</div>
+    </div>
+    <div class="metric-card amber">
+      <div class="metric-label">Revenue Opportunity</div>
+      <div class="metric-value">$32K+</div>
+      <div class="metric-sub">If redirected to Search at 3x ROAS</div>
+    </div>
+    <div class="metric-card neutral">
+      <div class="metric-label">Display + Discover + Gmail</div>
+      <div class="metric-value">$83</div>
+      <div class="metric-sub">0.1% of PMax on non-search surfaces</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3>PMax Signal Fragmentation</h3>
+      <p>Running five PMax campaigns simultaneously fragments the conversion signal each campaign receives. Google recommends that each PMax campaign accumulates at least 50 conversions per month to exit the learning phase and optimise reliably. Splitting the budget and signals across five campaigns means none of them reach that threshold at the individual campaign level.</p>
+      <p>The five PMax campaigns received between $1,731 and $29,622 in Q4 spend. At the lower budget levels, campaigns with 24 to 31 conversions over the quarter were permanently in a degraded learning state, making bid decisions with statistically insufficient data.</p>
+      <div class="insight-box amber">
+        <p><strong>The one Excellent-rated PMax campaign (No Feed US at 2.96x) consistently outperformed the four Poor-rated ones.</strong> Asset quality is a direct lever on where PMax places inventory. Poor-rated asset groups get less competitive inventory. Rebuilding all asset groups to Excellent strength is a prerequisite for PMax to perform at its ceiling.</p>
+      </div>
+    </div>
+    <div>
+      <h3>PMax Ad Strength by Campaign</h3>
+      <table class="data-table">
+        <thead>
+          <tr><th>Campaign</th><th>Spend</th><th>ROAS</th><th>Ad Strength</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>PMax No Feed US</td><td>$25,371</td><td class="warn">2.96x</td><td class="good">Excellent</td></tr>
+          <tr><td>PMax All Products US</td><td>$29,622</td><td class="bad">2.89x</td><td class="bad">Poor</td></tr>
+          <tr><td>PMax Watercolor House</td><td>$7,300</td><td class="warn">2.97x</td><td class="bad">Poor</td></tr>
+          <tr><td>PMax Non-Brand Feed</td><td>$5,488</td><td class="warn">3.24x</td><td class="bad">Poor</td></tr>
+          <tr><td>PMax Custom Deceased</td><td>$2,364</td><td class="bad">1.60x</td><td class="bad">Poor</td></tr>
+          <tr><td>PMax Pets</td><td>$1,731</td><td class="bad">2.76x</td><td class="bad">Poor</td></tr>
+        </tbody>
+      </table>
+      <div class="insight-box red">
+        <p><strong>The "Custom Add Deceased" campaign returned 1.60x ROAS on $2,364 in spend.</strong> This should be one of the strongest performing campaigns in the account. "Add deceased loved one to photo" is a high-intent, emotionally specific product search with clear purchase motivation. A 1.60x return on that audience points to a landing page alignment problem rather than a demand issue. The product page for this product received 6,310 visits and 1,096 key events in GA4, confirming the demand exists.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5: CAMPAIGN DETAIL -->
+<section class="slide">
+  <span class="slide-number">05 / 17</span>
+  <div class="slide-tag">Campaign Performance</div>
+  <h1 class="slide-title">Full Campaign Breakdown Q4 2025</h1>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Campaign</th><th>Q4 Spend</th><th>Conv. Value</th><th>ROAS</th><th>Conversions</th><th>CPA</th><th>QoQ Spend</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>PMax All Products US</td><td>$29,622</td><td>$85,603</td><td class="bad">2.89x</td><td>538</td><td>$55</td><td class="warn">+197%</td></tr>
+      <tr><td>PMax No Feed US</td><td>$25,371</td><td>$75,194</td><td class="warn">2.96x</td><td>405</td><td>$63</td><td class="warn">+210%</td></tr>
+      <tr><td>Standard Search US</td><td>$25,047</td><td>$76,379</td><td class="warn">3.05x</td><td>419</td><td>$60</td><td class="warn">+450%</td></tr>
+      <tr><td>Competitor Search US</td><td>$22,655</td><td>$73,174</td><td class="warn">3.23x</td><td>383</td><td>$59</td><td class="warn">+1,271%</td></tr>
+      <tr><td>Standard Shopping</td><td>$7,563</td><td>$18,819</td><td class="bad">2.49x</td><td>98</td><td>$77</td><td class="warn">+877%</td></tr>
+      <tr><td>PMax Watercolor House</td><td>$7,300</td><td>$21,651</td><td class="warn">2.97x</td><td>126</td><td>$58</td><td class="neutral-t">New Q4</td></tr>
+      <tr><td>DSA US</td><td>$7,258</td><td>$23,164</td><td class="warn">3.19x</td><td>132</td><td>$55</td><td class="neutral-t">New Q4</td></tr>
+      <tr><td>PMax Non-Brand Feed</td><td>$5,488</td><td>$17,765</td><td class="warn">3.24x</td><td>94</td><td>$58</td><td class="neutral-t">New Q4</td></tr>
+      <tr><td>PMax Custom Deceased</td><td>$2,364</td><td>$3,774</td><td class="bad">1.60x</td><td>24</td><td>$98</td><td class="neutral-t">New Q4</td></tr>
+      <tr><td>Brand Search US/CA/UK/AU</td><td>$1,894</td><td>$4,081</td><td class="bad">2.15x</td><td>21</td><td>$90</td><td class="warn">+1,035%</td></tr>
+      <tr><td>PMax Pets US</td><td>$1,731</td><td>$4,775</td><td class="bad">2.76x</td><td>31</td><td>$56</td><td class="neutral-t">New Q4</td></tr>
+      <tr><td>Shopping Deceased LO</td><td>$1,286</td><td>$2,633</td><td class="bad">2.05x</td><td>19</td><td>$68</td><td class="warn">+149%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="two-col">
+    <div class="insight-box red">
+      <p><strong>Brand Search at 2.15x ROAS requires immediate investigation.</strong> A correctly configured brand campaign capturing people who are actively searching for "Memorialize Art" by name should return 8x to 15x ROAS. These are the highest-intent users in the account. At 2.15x with 21 conversions from $1,894 in spend, either broad match is pulling in off-brand queries, the landing page experience has a friction issue for branded traffic, or attribution is routing credit incorrectly. Diagnosing this is a priority because Brand Search results also serve as a health indicator for the account's conversion tracking quality.</p>
+    </div>
+    <div class="insight-box amber">
+      <p><strong>The Competitor Search campaign spent $22,655 targeting PaintYourLife brand terms.</strong> The top search term was "paint your life" at $15,534 spend, 3,384 clicks, $4.59 CPC, and zero attributed conversions. The conquest concept is strategically valid: PaintYourLife appears in auction insights at 68.31% overlap rate and outranks Memorialize Art 69.69% of the time both show. But the zero-conversion result at that spend level indicates the landing page or offer was not configured specifically for conquest intent. Visitors arriving via a competitor brand query need a direct comparison, not a generic product page.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 6: MERCHANT CENTER -->
+<section class="slide">
+  <span class="slide-number">06 / 17</span>
+  <div class="slide-tag red">Merchant Center</div>
+  <h1 class="slide-title">The Entire Product Catalogue Was Ineligible</h1>
+
+  <div class="metrics-grid-3">
+    <div class="big-callout" style="border-color:rgba(239,68,68,0.25);">
+      <div class="number" style="color:var(--accent-red);">12,238</div>
+      <div class="label">Products Not Eligible</div>
+    </div>
+    <div class="big-callout" style="border-color:rgba(239,68,68,0.25);">
+      <div class="number" style="color:var(--accent-red);">0</div>
+      <div class="label">Eligible Products</div>
+    </div>
+    <div class="big-callout" style="border-color:rgba(239,68,68,0.25);">
+      <div class="number" style="color:var(--accent-red);">100%</div>
+      <div class="label">Feed Failure Rate</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <p>The Merchant Center Diagnostics screenshot shows all 12,238 products marked "Not eligible." The two flagged issues are "No campaigns advertising this product" affecting the full catalogue, and "Invalid price" on one product. The "No campaigns" error is a circular condition that occurs when all campaigns are paused. When campaign activity resumes, this status clears, but the invalid price issue must be resolved separately to avoid triggering broader feed quality reviews.</p>
+
+      <div class="insight-box red">
+        <p><strong>During the live Q4 period, the Shopping and feed-supplemented PMax campaigns were likely operating with reduced product eligibility.</strong> Standard Shopping returned 2.49x ROAS on $7,563 in Q4. A product feed with eligibility gaps prevents the Shopping algorithm from surfacing the most relevant products for each search query and forces it to work with an incomplete product subset, which limits conversion rates and increases CPA.</p>
+      </div>
+    </div>
+    <div>
+      <h3>Impact on PMax Performance</h3>
+      <p>Performance Max with a healthy product feed can serve Shopping ads across Google Search, Shopping, Display, Discover, Gmail, and YouTube simultaneously. PMax without a healthy feed is restricted to asset-only serving, which depends entirely on uploaded creative assets to find inventory. Two of the five Q4 PMax campaigns were explicitly feed-supplemented. If their feed was partially ineligible during live periods, their reach and performance would have been correspondingly constrained.</p>
+
+      <div class="insight-box amber">
+        <p><strong>PMax Non-Brand Feed Only returned the highest PMax ROAS in the account at 3.24x.</strong> This campaign, designed specifically to serve feed inventory, outperformed the three other active feed campaigns despite receiving only $5,488 in Q4 spend. With a fully eligible feed and adequate budget, this campaign structure has room to become the account's primary acquisition vehicle.</p>
+      </div>
+
+      <h3 style="margin-top:16px;">Resolution Path</h3>
+      <p>Resolving the feed requires: identifying and correcting the one invalid price product, reactivating campaigns to clear the "No campaigns" flag, conducting a full data quality audit across product titles, prices, availability, and images, and verifying that GTIN and brand attributes meet Google's requirements for custom art products.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 7: CHANGE HISTORY ANALYSIS -->
+<section class="slide">
+  <span class="slide-number">07 / 17</span>
+  <div class="slide-tag amber">Account Management Review</div>
+  <h1 class="slide-title">December Change History: A Structural Pattern</h1>
+
+  <p>The change history covers July through December 2025. The December activity reveals a pattern of reactive bid and budget adjustments that is counterproductive for Smart Bidding stability. All changes in the account were made by a single user identifier associated with the previous management. The following documents the December sequence precisely as it appears in the change history data.</p>
+
+  <div class="timeline">
+    <div class="timeline-item red">
+      <div class="timeline-label">December 28, 2025 at 5:25 PM to 5:27 PM</div>
+      <h4>Six changes made in two minutes</h4>
+      <p>A single session produced: PMax No Feed US paused. Three concurrent budget reductions (Competitor Search $1,200 to $1,000 per day, Standard Search $1,200 to $1,000 per day, PMax All Products $2,063 to $2,000). Three concurrent ROAS target reductions (Standard Search 950% to 800%, Standard Shopping 850% to 800%, Non-Brand Feed PMax 900% to 800%). When a campaign is underperforming against a ROAS target, cutting the target further allows Smart Bidding to relax its efficiency threshold, which produces more volume but at lower returns. This trade-off is sometimes appropriate during scale-up phases but is typically not the right response to underperformance at established spend levels.</p>
+    </div>
+    <div class="timeline-item red">
+      <div class="timeline-label">December 31, 2025 at 12:34 AM</div>
+      <h4>Final changes before account transition</h4>
+      <p>The last three account changes were: PMax All Products ROAS target raised from 600% to 800%, Competitor Search CPA target raised from $25 to $40, DSA CPA target raised from $25 to $40. Raising ROAS and CPA targets significantly on the final day of a management period means campaigns will enter a new learning cycle with highly restrictive bidding parameters on relaunch. A campaign with a tROAS target set to 800% needs considerably more conversion data before it can serve competitively, and it will restrict impression share aggressively until that data exists.</p>
+    </div>
+    <div class="timeline-item amber">
+      <div class="timeline-label">December 26 to 28, 2025</div>
+      <h4>Campaign status cycling within 48 hours</h4>
+      <p>PMax No Feed US was reactivated on December 26 and then paused again on December 28. PMax Non-Brand Feed Only was reactivated on December 26 and then had its ROAS target cut on December 28. Each time a campaign is paused and reactivated, the Smart Bidding algorithm resets its learning. A campaign that cycles through pause and reactivation within 48 hours at high spend levels never accumulates stable signal. The recommended practice is to avoid pausing active Smart Bidding campaigns unless there is a specific strategic reason, and to allow 2 to 4 weeks of stable running before evaluating performance.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-label">Q4 2025 Overall Structure</div>
+      <h4>Fifteen simultaneous campaigns targeting the same market</h4>
+      <p>Five PMax, four Search, four Shopping, one DSA, and one Display campaign ran concurrently throughout Q4, all targeting the US. The naming convention applied to every campaign uses the "POA |" prefix, which refers to the management organisation rather than the client's business objectives. Beyond naming, running fifteen campaigns in a single market without a consolidation strategy means each one receives a fraction of the conversion signal it would need to optimise effectively at its individual budget level.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 8: SEARCH TERMS ANALYSIS -->
+<section class="slide">
+  <span class="slide-number">08 / 17</span>
+  <div class="slide-tag">Search Terms Analysis</div>
+  <h1 class="slide-title">Query-Level Performance: Reading the Signal Through Broken Attribution</h1>
+
+  <p>The search terms report shows zero attributed conversions for every query in Q4. This is an attribution consequence of the broken mid-funnel tracking rather than evidence that search traffic failed to convert. The account recorded 2,290 conversions in Q4, but the tracking configuration cannot map those conversions back to the search queries that generated them. Despite this, the data remains useful for intent analysis using CTR, CPC, and impression volume as proxies.</p>
+
+  <div class="two-col">
+    <div>
+      <h2>Top Queries by Spend</h2>
+      <table class="data-table">
+        <thead>
+          <tr><th>Query</th><th>Spend</th><th>Clicks</th><th>CPC</th><th>CTR</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>paint your life</td><td class="bad">$15,534</td><td>3,384</td><td>$4.59</td><td>7.1%</td></tr>
+          <tr><td>deceased loved one painting</td><td class="good">$3,528</td><td>656</td><td>$5.38</td><td class="good">15.6%</td></tr>
+          <tr><td>paint my life</td><td class="bad">$3,673</td><td>757</td><td>$4.85</td><td>7.4%</td></tr>
+          <tr><td>memorialize</td><td>$2,159</td><td>676</td><td>$3.19</td><td>10.7%</td></tr>
+          <tr><td>paintyourlife (brand)</td><td class="bad">$1,755</td><td>397</td><td>$4.42</td><td>5.3%</td></tr>
+          <tr><td>memorial paintings</td><td>$566</td><td>102</td><td>$5.55</td><td>7.6%</td></tr>
+          <tr><td>painting of loved one passed</td><td>$323</td><td>71</td><td>$4.55</td><td>9.8%</td></tr>
+          <tr><td>family portrait with deceased</td><td>$164</td><td>44</td><td>$3.73</td><td>8.6%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3>Budget Allocation vs. Intent Quality</h3>
+      <p>"Deceased loved one painting" at 15.6% CTR is the highest-intent query in the account. Users entering that search know precisely what they are looking for. The $5.38 CPC and 656 clicks represent $3,528 spent on visitors with clear, specific purchase intent. By contrast, "paint your life" at 7.1% CTR is a competitor brand name. Lower intent, higher volume, and $15,534 in Q4 spend at $4.59 CPC.</p>
+
+      <div class="insight-box amber">
+        <p><strong>The word-level data shows "paint" at $20,563 and "life" at $20,375 as the top two spend drivers.</strong> Both are dominated by competitor conquest queries. Over $40,000 of Q4 search budget concentrated in competitor brand terms. The core memorial and grief intent queries ("memorial," "deceased," "loved one," "passed away") received a fraction of that. Realigning spend toward owned-category terms and high-intent product searches is a key lever for improving ROAS on the Search channel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 9: COMPETITIVE LANDSCAPE -->
+<section class="slide">
+  <span class="slide-number">09 / 17</span>
+  <div class="slide-tag">Competitive Landscape</div>
+  <h1 class="slide-title">Under 10% Impression Share. 90% of Demand Going Elsewhere.</h1>
+
+  <div class="metrics-grid">
+    <div class="metric-card red">
+      <div class="metric-label">M&A Impression Share</div>
+      <div class="metric-value">&lt;10%</div>
+      <div class="metric-sub">Missing 90%+ of available auctions</div>
+    </div>
+    <div class="metric-card amber">
+      <div class="metric-label">PaintYourLife Overlap</div>
+      <div class="metric-value">68.3%</div>
+      <div class="metric-sub">They appear when you appear, 68% of the time</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Etsy IS</div>
+      <div class="metric-value">24.2%</div>
+      <div class="metric-sub">35.97% overlap</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Amazon IS</div>
+      <div class="metric-value">17.8%</div>
+      <div class="metric-sub">12.02% overlap</div>
+    </div>
+  </div>
+
+  <h2>Auction Insights Q4 2025</h2>
+  <table class="data-table">
+    <thead>
+      <tr><th>Competitor</th><th>Their IS</th><th>Overlap Rate</th><th>They Outrank You</th><th>Top of Page IS</th><th>Assessment</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>paintyourlife.com</td><td class="bad">16.28%</td><td class="bad">68.31%</td><td class="bad">69.69%</td><td>87.11%</td><td class="bad">Primary competitive rival</td></tr>
+      <tr><td>etsy.com</td><td class="warn">24.16%</td><td class="warn">35.97%</td><td>34.79%</td><td>89.83%</td><td class="warn">Marketplace, different offer</td></tr>
+      <tr><td>amazon.com</td><td class="warn">17.76%</td><td>12.02%</td><td>32.12%</td><td>90.00%</td><td class="neutral-t">Low direct overlap</td></tr>
+      <tr><td>shutterfly.com</td><td>16.08%</td><td>3.61%</td><td>41.27%</td><td>94.07%</td><td class="neutral-t">Different category</td></tr>
+      <tr><td>canvasondemand.com</td><td>&lt;10%</td><td>6.35%</td><td>41.14%</td><td>83.30%</td><td class="neutral-t">Minimal direct threat</td></tr>
+    </tbody>
+  </table>
+
+  <div class="two-col">
+    <div class="insight-box amber">
+      <p><strong>Etsy and Amazon are not direct product competitors.</strong> Neither can offer the specific, high-quality personalised memorial portrait proposition that Memorialize Art provides. Their impression share comes from appearing on broad portrait and gift queries. On the high-intent, specific memorial queries where purchase motivation is strongest, Memorialize Art's product differentiation is genuine and creates a natural advantage once impression share is addressed.</p>
+    </div>
+    <div class="insight-box">
+      <p><strong>Under 10% impression share with a sub-3x ROAS is a structural problem, not a bidding problem.</strong> Fixing impression share requires resolving the conversion tracking, feed health, and campaign architecture issues first. Those fixes improve signal quality, which raises Quality Scores, which reduces CPC and increases eligible impression share without requiring higher CPCs. Bidding more aggressively before fixing the infrastructure produces more expensive traffic with the same conversion rate problems.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 10: AUDIENCE AND DEMOGRAPHICS -->
+<section class="slide">
+  <span class="slide-number">10 / 17</span>
+  <div class="slide-tag purple">Audience Intelligence</div>
+  <h1 class="slide-title">Core Buyer Profile and Timing Windows</h1>
+
+  <div class="two-col">
+    <div>
+      <h2>Gender Q4 2025</h2>
+      <div class="progress-row">
+        <div class="progress-label"><span>Female</span><span style="color:var(--accent-green);font-weight:600;">71.44%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:71.44%;background:var(--accent-green);"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-label"><span>Male</span><span>29.34%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:29.34%;background:var(--accent-blue);"></div></div>
+      </div>
+
+      <h2 style="margin-top:24px;">Age Distribution</h2>
+      <div class="progress-row">
+        <div class="progress-label"><span>25 to 34</span><span style="color:var(--accent-green);font-weight:600;">39.78%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:79.56%;background:var(--accent-green);"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-label"><span>35 to 44</span><span style="color:var(--accent-amber);">23.20%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:46.4%;background:var(--accent-amber);"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-label"><span>18 to 24</span><span>18.10%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:36.2%;background:var(--accent-purple);"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-label"><span>45 to 54</span><span>11.50%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:23%;background:var(--accent-blue);"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-label"><span>55 to 64</span><span style="color:var(--text-muted);">5.35%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:10.7%;background:var(--text-muted);"></div></div>
+      </div>
+
+      <p style="margin-top:16px;">Female 25 to 44 accounts for 57.45% of all impressions. This is a clearly defined core buyer segment: two age bands, one gender, representing well over half of all ad exposure. Understanding their purchase triggers is the most direct path to improving creative relevance and conversion rates.</p>
+    </div>
+    <div>
+      <h2>Device Split Q4 2025</h2>
+      <table class="data-table">
+        <thead>
+          <tr><th>Device</th><th>Spend</th><th>% Total</th><th>Impressions</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mobile</td><td>$121,536</td><td class="bad">88.3%</td><td>2,474,240</td></tr>
+          <tr><td>Desktop</td><td>$15,233</td><td>11.1%</td><td>184,865</td></tr>
+          <tr><td>Tablet</td><td>$960</td><td>0.7%</td><td>254,965</td></tr>
+        </tbody>
+      </table>
+
+      <div class="insight-box red">
+        <p><strong>88.3% of spend goes to mobile and the mobile Performance score is 68/100.</strong> The simulated LCP is 3.9 seconds, Speed Index is 10.6 seconds, and Total Blocking Time is 420ms. Every conversion rate improvement on mobile multiplies across 88% of total spend. Site speed is not a secondary concern here. It is the highest-leverage single improvement available to the account.</p>
+      </div>
+
+      <h3 style="margin-top:16px;">Scheduling Data</h3>
+      <p>Impressions peak between 4 PM and 8 PM daily, consistent across the quarter. Sunday generates the highest weekly impression volume, followed by Tuesday and Monday. These windows align with the purchase psychology of considered, emotionally motivated purchases: evening browsing, weekend decision-making. Bid schedule adjustments to reflect these windows are not currently documented in the change history.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 11: FUNNEL ANALYSIS -->
+<section class="slide">
+  <span class="slide-number">11 / 17</span>
+  <div class="slide-tag">Funnel Analysis</div>
+  <h1 class="slide-title">Paid Traffic Funnel: Where the Revenue Gap Lives</h1>
+
+  <h2>Paid Traffic Q4 2025 (GA4 Funnel Exploration)</h2>
+  <div style="margin:20px 0 28px;">
+    <div class="funnel-step">
+      <div class="step-name">Paid Sessions</div>
+      <div class="step-bar"><div class="step-bar-fill" style="width:100%;background:var(--accent-green);"></div></div>
+      <div class="step-value">55,246</div>
+      <div class="step-rate" style="color:var(--accent-green);">Baseline</div>
+    </div>
+    <div class="funnel-step">
+      <div class="step-name">Item View Events</div>
+      <div class="step-bar"><div class="step-bar-fill" style="width:95.2%;background:var(--accent-green);"></div></div>
+      <div class="step-value">52,602</div>
+      <div class="step-rate" style="color:var(--accent-green);">95.2% of sessions</div>
+    </div>
+    <div class="funnel-step">
+      <div class="step-name">Add to Cart</div>
+      <div class="step-bar"><div class="step-bar-fill" style="width:18.7%;background:var(--accent-amber);"></div></div>
+      <div class="step-value">9,858</div>
+      <div class="step-rate" style="color:var(--accent-amber);">18.7% of views</div>
+    </div>
+    <div class="funnel-step">
+      <div class="step-name">Begin Checkout</div>
+      <div class="step-bar"><div class="step-bar-fill" style="width:9.1%;background:var(--accent-amber);"></div></div>
+      <div class="step-value">5,004</div>
+      <div class="step-rate" style="color:var(--accent-amber);">50.8% of cart adds</div>
+    </div>
+    <div class="funnel-step">
+      <div class="step-name">Purchase</div>
+      <div class="step-bar"><div class="step-bar-fill" style="width:3.5%;background:var(--accent-red);"></div></div>
+      <div class="step-value">1,929</div>
+      <div class="step-rate" style="color:var(--accent-red);">38.5% of checkouts</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3>Checkout to Purchase Gap</h3>
+      <p>61.5% of users who began checkout did not complete a purchase. 3,075 users cleared every funnel stage including checkout initiation and did not complete. At a $178 AOV, those 3,075 sessions represent approximately $547,000 in potential revenue that reached the final decision point. Checkout abandonment at this rate is above typical benchmarks for a considered, emotional purchase category and warrants detailed investigation of the checkout experience, trust signals, payment options, and any friction points specific to the Shopify configuration.</p>
+
+      <div class="insight-box amber">
+        <p><strong>The cart-to-checkout conversion of 50.8% is healthy.</strong> Users who add to cart are proceeding to checkout at a reasonable rate. The abandonment problem is concentrated in the checkout-to-purchase step, not in the cart experience. This narrows the CRO focus to the checkout flow specifically: trust signals, payment options, address validation, order summary clarity, and any steps that may introduce unexpected friction for US buyers.</p>
+      </div>
+    </div>
+    <div>
+      <h3>GA4 Channel Revenue Performance</h3>
+      <table class="data-table">
+        <thead>
+          <tr><th>Channel</th><th>Users</th><th>Revenue</th><th>Rev / User</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Paid Search</td><td>9,159</td><td class="good">$121,424</td><td class="good">$13.25</td></tr>
+          <tr><td>Cross-network (PMax)</td><td>15,609</td><td class="good">$130,450</td><td class="warn">$8.36</td></tr>
+          <tr><td>Direct</td><td>20,632</td><td class="warn">$97,239</td><td>$4.71</td></tr>
+          <tr><td>Paid Social</td><td>19,418</td><td class="warn">$83,630</td><td>$4.31</td></tr>
+          <tr><td>Organic Social</td><td>20,840</td><td>$53,103</td><td class="bad">$2.55</td></tr>
+          <tr><td>Organic Search</td><td>8,969</td><td class="bad">$9,644</td><td class="bad">$1.08</td></tr>
+        </tbody>
+      </table>
+
+      <div class="insight-box purple">
+        <p><strong>Paid Search generates $13.25 per user, five times Organic Social and more than any other channel.</strong> Combined with PMax, Google Ads accounts for $251,874 of the total Q4 GA4 revenue despite the structural issues documented in this audit. The channel efficiency is proven. The infrastructure issues reduced it below its potential ceiling, not below viability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 12: SITE SPEED AND CRO -->
+<section class="slide">
+  <span class="slide-number">12 / 17</span>
+  <div class="slide-tag amber">Site Speed and CRO</div>
+  <h1 class="slide-title">Mobile Performance: The Conversion Rate Ceiling</h1>
+
+  <div class="two-col">
+    <div>
+      <h2>PageSpeed Insights: Mobile</h2>
+      <div class="metrics-grid" style="grid-template-columns:repeat(2,1fr);margin-bottom:20px;">
+        <div class="metric-card red">
+          <div class="metric-label">Performance</div>
+          <div class="metric-value">68/100</div>
+        </div>
+        <div class="metric-card amber">
+          <div class="metric-label">Accessibility</div>
+          <div class="metric-value">83/100</div>
+        </div>
+        <div class="metric-card amber">
+          <div class="metric-label">Best Practices</div>
+          <div class="metric-value">88/100</div>
+        </div>
+        <div class="metric-card amber">
+          <div class="metric-label">SEO Score</div>
+          <div class="metric-value">85/100</div>
+        </div>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Metric</th><th>Result</th><th>Target</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>LCP (real users)</td><td>2.5s</td><td>&lt;2.5s</td><td class="warn">Borderline</td></tr>
+          <tr><td>INP</td><td>159ms</td><td>&lt;200ms</td><td class="good">Good</td></tr>
+          <tr><td>CLS</td><td>0.08</td><td>&lt;0.1</td><td class="good">Good</td></tr>
+          <tr><td>LCP (Lighthouse lab)</td><td>3.9s</td><td>&lt;2.5s</td><td class="bad">Poor</td></tr>
+          <tr><td>TBT</td><td>420ms</td><td>&lt;200ms</td><td class="bad">2.1x over</td></tr>
+          <tr><td>Speed Index</td><td>10.6s</td><td>&lt;3.4s</td><td class="bad">Critical</td></tr>
+          <tr><td>Page Weight</td><td>9,864 KiB</td><td>&lt;1,600 KiB</td><td class="bad">6x over</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3>Priority Speed Issues</h3>
+      <p>Lighthouse flags four high-impact issues: render-blocking requests with an estimated 430ms savings, unused JavaScript at 424 KiB, JavaScript execution time contributing 1.4 seconds to load, and main-thread blocking work adding 2.6 seconds. Total page weight of 9,864 KiB is six times the recommended threshold. These are Shopify theme and app-level optimisations.</p>
+
+      <div class="insight-box red">
+        <p><strong>The gap between the real-user LCP of 2.5s and the Lighthouse lab LCP of 3.9s is important context.</strong> Real-user data reflects Chrome users on relatively modern devices with decent connections. The Lighthouse lab simulation runs on an emulated mid-range Android device with throttled 4G. The 88% mobile audience includes a range of device capabilities. Budget Android devices will experience load times closer to the lab figures than the real-user median, meaning a portion of the audience is experiencing significantly degraded performance that the CWV Passed status does not capture.</p>
+      </div>
+
+      <h3 style="margin-top:16px;">CRO Findings</h3>
+      <p>The homepage receives 35,747 views in GA4 but generates minimal key events. Traffic directed to specific product pages converts at significantly higher rates. The custom watercolor portrait product page drives 5,500 key events from 43,743 visits (12.6% engagement). Campaigns configured to land on product pages rather than the homepage will outperform homepage-destination campaigns consistently. The top two product pages generate the majority of site revenue and should anchor all paid traffic destination strategy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 13: ICP ANALYSIS -->
+<section class="slide">
+  <span class="slide-number">13 / 17</span>
+  <div class="slide-tag purple">Ideal Customer Profile</div>
+  <h1 class="slide-title">Two Distinct Buyers. One Set of Ads. The Disconnect.</h1>
+
+  <p>The Q4 data, combined with search term intent analysis, reveals two distinct buyer psychologies purchasing the same product for fundamentally different reasons. The current campaign structure does not segment creative, messaging, or landing pages between them. Building toward that separation is one of the highest-leverage improvements available without any budget increase.</p>
+
+  <div class="two-col">
+    <div>
+      <div class="card" style="border-top:3px solid var(--accent-purple);">
+        <h3 style="color:var(--accent-purple);">Buyer Type 1: Grief-Led Purchase</h3>
+        <p><strong style="color:var(--text-primary);">Who they are:</strong> Female, 25 to 44. Has experienced a recent loss, typically within 6 to 24 months. Parent, partner, sibling, or pet. The purchase is for themselves or as a tribute gift to someone who shared the loss. Decision timeline is extended but intent is very high when it crystallises.</p>
+        <p><strong style="color:var(--text-primary);">Search behaviour:</strong> "memorial paintings of loved ones," "portrait of deceased loved one," "painting of person who passed away," "add deceased loved one to family photo." High specificity, emotional language, clear outcome orientation. They are comparing suppliers, not product categories.</p>
+        <p><strong style="color:var(--text-primary);">Primary concern:</strong> Trust. The fear of receiving a disappointing product at a significant emotional moment is the primary conversion barrier. Proof elements that matter most: process transparency, artist credentials, real customer reviews from people in similar situations, and explicit reassurance around the final result.</p>
+        <p><strong style="color:var(--text-primary);">Conversion catalyst:</strong> Evidence that others in the same situation chose Memorialize Art and were satisfied. Reviews with emotional resonance, not just star ratings.</p>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="border-top:3px solid var(--accent-amber);">
+        <h3 style="color:var(--accent-amber);">Buyer Type 2: Occasion-Led Gift</h3>
+        <p><strong style="color:var(--text-primary);">Who they are:</strong> Female or male, 25 to 44, purchasing a gift for someone who has experienced a loss. Occasion-driven: Mother's Day, Father's Day, Christmas, a birthday. Time-sensitive. Wants to give something that communicates care and effort rather than a generic gift.</p>
+        <p><strong style="color:var(--text-primary);">Search behaviour:</strong> "meaningful memorial gift," "personalised portrait gift," "unique gift for grieving person," "thoughtful sympathy gift." More generic, category-level searches. Higher volume. Needs to be convinced that a portrait is the right gift category before evaluating Memorialize Art specifically.</p>
+        <p><strong style="color:var(--text-primary);">Primary concern:</strong> Timing and gift-suitability. Will it arrive before the occasion? Will the recipient like it? Will it feel personal enough? What happens if something goes wrong?</p>
+        <p><strong style="color:var(--text-primary);">Conversion catalyst:</strong> Deadline guarantees, before-and-after creative, recipient reaction videos, explicit delivery timelines tied to occasion dates.</p>
+      </div>
+
+      <div class="insight-box" style="margin-top:16px;">
+        <p><strong>The current account runs uniform creative to both buyer types.</strong> Separate asset groups with messaging specific to each ICP would improve ad relevance scores, improve Quality Score on targeted keyword groups, and lift conversion rates by serving the right message to the right intent signal. This is achievable within PMax through audience signal configuration and asset group segmentation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 14: WHAT IS WORKING -->
+<section class="slide">
+  <span class="slide-number">14 / 17</span>
+  <div class="slide-tag green">Positive Indicators</div>
+  <h1 class="slide-title">What the Data Confirms Is Working</h1>
+
+  <p>Despite the structural issues documented throughout this audit, Q4 2025 contains clear signals of product-market fit and genuine channel performance that a correctly configured account can build on.</p>
+
+  <div class="three-col">
+    <div class="card" style="border-top:3px solid var(--accent-green);">
+      <h4 style="color:var(--accent-green);">Paid Search Efficiency</h4>
+      <p>Paid Search generated $121,424 in Q4 revenue from 9,159 GA4 users at $13.25 per user. That is the highest revenue-per-user figure of any traffic channel in the account by a significant margin. When search campaigns reach users with genuine memorial art purchase intent, Memorialize Art converts.</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent-green);">
+      <h4 style="color:var(--accent-green);">Product Page Engagement</h4>
+      <p>The custom watercolor memorial portrait product page received 43,743 views and generated 5,500 key events in Q4, a 12.6% engagement rate. The personalised watercolor portrait page drove similar numbers. The hero product line has proven commercial pull and is the right anchor for paid traffic destination strategy.</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent-green);">
+      <h4 style="color:var(--accent-green);">Mobile Purchase Volume</h4>
+      <p>2,935 of 3,242 total GA4 purchases in Q4 came from mobile, representing 90.5% of all purchases. Meaningful purchase intent persists through the mobile experience despite the speed constraints. Speed improvements have a direct multiplier effect on the segment already responsible for 9 in 10 purchases.</p>
+    </div>
+  </div>
+
+  <div class="three-col" style="margin-top:0;">
+    <div class="card" style="border-top:3px solid var(--accent-green);">
+      <h4 style="color:var(--accent-green);">Add-to-Cart Rate</h4>
+      <p>18.7% of paid visitors who viewed a product page added to cart. For a $178 custom product with meaningful production time, this is a healthy signal. The product, price point, and page presentation are compelling enough to motivate cart additions at a meaningful rate. The funnel issue lives downstream of product-page performance.</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent-green);">
+      <h4 style="color:var(--accent-green);">Competitive Whitespace</h4>
+      <p>No meaningful direct competitor has established dominance in the Google Ads auction for personalised memorial art. PaintYourLife shows at 68% overlap but with known product and review weaknesses. Etsy and Amazon cannot replicate the personalised memorial portrait proposition. The competitive position is genuinely advantageous.</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent-green);">
+      <h4 style="color:var(--accent-green);">Q4 Seasonality Confirmed</h4>
+      <p>Impression and spend data shows a clear demand ramp from early October through Black Friday and into Christmas. Peak days reached $5,192 in daily spend during the Black Friday week. The seasonal demand curve is real and substantial. The Q4 opportunity is not fully captured yet and represents the clearest scaling target on the calendar.</p>
+    </div>
+  </div>
+
+  <div class="insight-box" style="margin-top:8px;">
+    <p><strong>The fundamental assessment:</strong> Memorialize Art has a strong product, a clear audience, proven purchase intent across multiple channels, and a meaningful competitive advantage in its niche. The Q4 2025 ROAS of 2.96x reflects infrastructure configuration issues rather than a market or product limitation. Every identified problem has a specific, documented fix with a clear implementation timeline.</p>
+  </div>
+</section>
+
+<!-- SLIDE 15: ROADMAP -->
+<section class="slide">
+  <span class="slide-number">15 / 17</span>
+  <div class="slide-tag">Strategic Roadmap</div>
+  <h1 class="slide-title">Four Phases to Rebuild the Account</h1>
+
+  <p>The roadmap is sequenced by dependency. Phases 1 and 2 address infrastructure that must be stable before increasing spend. Phase 3 scales on a clean foundation. Phase 4 compounds the gains across channels and markets.</p>
+
+  <div class="timeline">
+    <div class="timeline-item red">
+      <div class="timeline-label">Phase 1 - Weeks 1 to 2: Infrastructure Repair</div>
+      <h4>Nothing gets turned on until these are done</h4>
+      <p>Audit and rebuild conversion tracking: remove duplicate Google Shopping App events, switch all seven eligible events to Data-Driven Attribution, verify Add to Cart and Begin Checkout fire correctly via Google Tag Assistant, and standardise all campaigns to a single unified purchase conversion action. Resolve the Merchant Center invalid price issue and reactivate the feed to clear the "No campaigns" eligibility block. Conduct a full feed data quality audit. Reset all tROAS targets to realistic levels based on current performance data: the December 31 increase to 800% needs to be unwound before campaigns can spend effectively on relaunch. Target on delivery: verified tracking, eligible feed, functional relaunch parameters.</p>
+    </div>
+    <div class="timeline-item amber">
+      <div class="timeline-label">Phase 2 - Weeks 3 to 6: Account Rebuild</div>
+      <h4>Consolidate, rebuild assets, relaunch at test budget</h4>
+      <p>Consolidate five PMax campaigns into two: one feed-supplemented campaign for product-led acquisition and one asset-only campaign for brand-adjacent prospecting and retargeting. Rebuild all asset groups to Excellent strength with dedicated headlines, descriptions, and images for each ICP segment. Rebuild Brand Search with exact match brand terms only and an appropriate tROAS target of 800% minimum. Build dedicated retargeting campaigns for product page viewers and cart abandoners. Launch at $300 to $500 per day to accumulate clean signal data. Target: stable ROAS at 3.5x or higher before Phase 3 spend increase. Add bid schedule adjustments for 4 PM to 10 PM and Sunday-weighted multipliers.</p>
+    </div>
+    <div class="timeline-item purple">
+      <div class="timeline-label">Phase 3 - Weeks 7 to 12: Controlled Scale</div>
+      <h4>Increase budgets on validated campaigns only</h4>
+      <p>With four to six weeks of clean conversion data, begin scaling PMax and Search budgets at 15% to 20% per week on campaigns holding 4.0x ROAS or higher. Launch the Competitor Search conquest strategy with a dedicated landing page built specifically for visitors arriving from PaintYourLife brand queries: direct comparison, social proof, and a specific offer. Begin mobile speed optimisation with a target of reducing TBT below 200ms and Speed Index below 5 seconds, which should improve mobile conversion rate by an estimated 15% to 25%. Target: $700 to $1,000 per day at 4.0x to 4.5x ROAS.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-label">Phase 4 - Months 4 to 12: Compound</div>
+      <h4>Expand market, diversify channels, build the calendar</h4>
+      <p>Expand into UK and Canada, where campaign naming history (Standard Search Mother's Day UK, Standard Search CA) indicates prior testing. Build a seasonal campaign calendar around Mother's Day, Father's Day, pet loss awareness events, Thanksgiving, and Christmas, each with dedicated creative and tailored offers. Explore Demand Gen campaigns for video-led prospecting using the emotional product story. Target: $2,000 or more per day at 4.5x ROAS across US, UK, and CA. Q4 2026 should represent the strongest quarter in the account's history with a full planning cycle in advance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 16: REVENUE PROJECTIONS -->
+<section class="slide">
+  <span class="slide-number">16 / 17</span>
+  <div class="slide-tag">Revenue Projections</div>
+  <h1 class="slide-title">What Recovery and Scale Look Like</h1>
+
+  <p>Three scenarios based on execution depth. Conservative assumes tracking and feed fixed with minimal structural changes. Moderate assumes Phases 1 and 2 fully executed including account rebuild and CRO. Aggressive assumes all four phases including speed improvements, ICP creative, and seasonal calendar.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th>Conservative Spend</th>
+        <th>Conservative ROAS</th>
+        <th>Moderate Spend</th>
+        <th>Moderate ROAS</th>
+        <th>Aggressive Spend</th>
+        <th>Aggressive ROAS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Mar 2026 (relaunch)</td><td>$300/day</td><td class="warn">3.4x</td><td>$400/day</td><td class="warn">3.6x</td><td>$500/day</td><td class="warn">3.8x</td></tr>
+      <tr><td>Apr 2026 (rebuild)</td><td>$400/day</td><td class="warn">3.6x</td><td>$500/day</td><td class="warn">3.9x</td><td>$650/day</td><td class="good">4.2x</td></tr>
+      <tr><td>May 2026 (Mother's Day)</td><td>$600/day</td><td class="warn">3.8x</td><td>$750/day</td><td class="good">4.2x</td><td>$900/day</td><td class="good">4.8x</td></tr>
+      <tr><td>Jun 2026 (Father's Day)</td><td>$700/day</td><td class="good">4.0x</td><td>$900/day</td><td class="good">4.5x</td><td>$1,100/day</td><td class="good">5.0x</td></tr>
+      <tr><td>Jul 2026</td><td>$800/day</td><td class="good">4.2x</td><td>$1,000/day</td><td class="good">4.5x</td><td>$1,200/day</td><td class="good">5.0x</td></tr>
+      <tr><td>Aug 2026</td><td>$900/day</td><td class="good">4.3x</td><td>$1,100/day</td><td class="good">4.8x</td><td>$1,400/day</td><td class="good">5.2x</td></tr>
+      <tr><td>Q4 2026 (peak)</td><td>$1,500/day</td><td class="good">4.5x</td><td>$2,000/day</td><td class="good">5.0x</td><td>$2,500/day</td><td class="good">5.5x</td></tr>
+    </tbody>
+  </table>
+
+  <div class="metrics-grid-3" style="margin-top:24px;">
+    <div class="metric-card amber">
+      <div class="metric-label">Conservative (12 months)</div>
+      <div class="metric-value">$1.0M+</div>
+      <div class="metric-sub">Google Ads revenue. Tracking fix only. 3.9x avg ROAS.</div>
+    </div>
+    <div class="metric-card purple">
+      <div class="metric-label">Moderate (12 months)</div>
+      <div class="metric-value">$1.4M+</div>
+      <div class="metric-sub">Full rebuild + CRO. 4.4x avg ROAS.</div>
+    </div>
+    <div class="metric-card green">
+      <div class="metric-label">Aggressive (12 months)</div>
+      <div class="metric-value">$1.9M+</div>
+      <div class="metric-sub">All phases including speed and seasonal. 5.0x avg ROAS.</div>
+    </div>
+  </div>
+
+  <div class="insight-box" style="margin-top:20px;">
+    <p><strong>These projections cover Google Ads in the US market only.</strong> They do not include UK or Canadian expansion, Meta, email, organic, or any other revenue channel. Q4 2026, approached with a full-quarter planning cycle, correct infrastructure, and the seasonal demand patterns confirmed in Q4 2025, represents the largest near-term revenue opportunity available to the account.</p>
+  </div>
+</section>
+
+<!-- SLIDE 17: PRIORITY ACTIONS -->
+<section class="slide">
+  <span class="slide-number">17 / 17</span>
+  <div class="slide-tag">Priority Actions</div>
+  <h1 class="slide-title">The Sequenced Action List</h1>
+
+  <p>Prioritised by impact and dependency. Items in Week 1 are prerequisites for everything else. No spend should be reactivated until the tracking and bid parameter issues are resolved.</p>
+
+  <div class="two-col">
+    <div>
+      <h3 style="color:var(--accent-red);">Week 1: Before Relaunch</h3>
+      <div class="insight-box red">
+        <p><strong>1. Fix conversion tracking.</strong> Remove the seven Google Shopping App Last Click events. Switch the primary purchase event to Data-Driven Attribution only. Verify Add to Cart and Begin Checkout fire correctly using Google Tag Assistant live testing. Confirm zero duplicate conversion actions active.</p>
+      </div>
+      <div class="insight-box red">
+        <p><strong>2. Reset bid targets.</strong> The December 31 tROAS increases to 800% across PMax campaigns and tCPA raises on Competitor Search and DSA need to be recalibrated to achievable targets based on Q4 actual performance data before campaigns go live.</p>
+      </div>
+      <div class="insight-box red">
+        <p><strong>3. Fix Merchant Center.</strong> Identify and correct the one invalid-price product. Reactivate a single low-budget campaign to clear the "No campaigns" eligibility block. Run a full feed quality audit against Google's product data requirements.</p>
+      </div>
+
+      <h3 style="color:var(--accent-amber);margin-top:8px;">Weeks 2 to 4: Account Rebuild</h3>
+      <div class="insight-box amber">
+        <p><strong>4. Consolidate PMax.</strong> Reduce five campaigns to two. One feed-supplemented for product acquisition. One asset-only for retargeting and brand-adjacent prospecting. Rebuild all asset groups to Excellent strength before launch.</p>
+      </div>
+      <div class="insight-box amber">
+        <p><strong>5. Fix Brand Search.</strong> Review the campaign's keyword match types and search term report for off-brand query triggering. A correctly configured brand campaign should return 8x to 15x ROAS, not 2.15x.</p>
+      </div>
+    </div>
+    <div>
+      <h3 style="color:var(--accent-purple);">Weeks 3 to 8: CRO and Creative</h3>
+      <div class="insight-box purple">
+        <p><strong>6. Address mobile speed.</strong> Target render-blocking JS (430ms savings), unused JavaScript (424 KiB), and main-thread work (2.6 seconds). The 9,864 KiB total page weight needs to be reduced significantly. Estimated conversion rate improvement on mobile: 15% to 25%.</p>
+      </div>
+      <div class="insight-box purple">
+        <p><strong>7. Build ICP-segmented asset groups.</strong> Separate creative for Grief-Led buyers (trust, process, artist quality) and Occasion-Led gift buyers (delivery timelines, occasion-specific messaging, recipient reaction proof). Currently all ads serve the same message regardless of intent signal.</p>
+      </div>
+      <div class="insight-box purple">
+        <p><strong>8. Build retargeting campaigns.</strong> Product page viewers and add-to-cart users currently receive no systematic Google re-engagement. With 9,858 cart adds and 5,004 checkout starts recorded in Q4, a structured retargeting programme targeting users within 3 to 7 days of their last session represents directly recoverable revenue.</p>
+      </div>
+      <div class="insight-box purple">
+        <p><strong>9. Build the competitor conquest landing page.</strong> Create a dedicated page for "paint your life" and PaintYourLife brand traffic. Direct comparison format, social proof, and a specific reason to switch. The $22,655 Q4 budget for this campaign needs a landing page built for that audience before it is reactivated.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;padding:28px;background:var(--bg-card);border:1px solid rgba(0,217,165,0.2);border-radius:12px;text-align:center;">
+    <p style="color:var(--text-muted);font-size:12px;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;">Prepared by</p>
+    <p style="font-family:'DM Sans',sans-serif;font-size:18px;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Heath Media</p>
+    <p style="color:var(--text-muted);font-size:13px;margin-bottom:0;">Google Ads Audit &nbsp;|&nbsp; Memorialize Art &nbsp;|&nbsp; February 2026 &nbsp;|&nbsp; Confidential</p>
+  </div>
+</section>
+
+</body>
+</html>
